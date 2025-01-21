@@ -19,3 +19,4 @@ jobs:
           run: |
             gh issue edit $ISSUE_URL --add-label "triage"
             gh issue edit $ISSUE_URL --add-assignee "zchristianl"
+            gh issue comment $ISSUE_URL --body "📫 Dear friend, we have received your issue. The team will respond accordingly."
