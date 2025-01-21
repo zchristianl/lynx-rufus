@@ -16,9 +16,6 @@ jobs:
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
-
-      - name: Apply Label
-        run: gh issue edit $ISSUE_URL --add-label "triage"
-
-      - name: Assign Issue
-        run: gh issue edit $ISSUE_URL --add-assignee "zchristianl"
+          
+      - run: gh issue edit $ISSUE_URL --add-label "triage"
+      - run: gh issue edit $ISSUE_URL --add-assignee "zchristianl"
