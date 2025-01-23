@@ -13,4 +13,4 @@ jobs:
       - name: Set file notice message
         run: echo "::warning file=index.js,line=2,col=5,endColumn=7,title=ERROR::index has problem"
       - name: Mask simple string
-        run: echo "Your password is ::add-mask::sonic1"
+        run: echo "Your password is"; echo "::add-mask::sonic1"
