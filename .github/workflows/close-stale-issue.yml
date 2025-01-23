@@ -1,0 +1,16 @@
+name: Close Stale Issues
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9.1.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-issue-stale: 1
+          close-issue-message: "Dear friend, this issue has been stale for too long and must be closed. Many thanks!"
+          close-issue-reason: not_planned
