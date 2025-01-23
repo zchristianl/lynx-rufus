@@ -1,0 +1,12 @@
+name: Issue workflow command
+
+
+on:
+  workflow_dispatch:
+
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Notice Message
+        run: echo "::notice::This is a notice message"
