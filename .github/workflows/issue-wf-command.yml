@@ -10,3 +10,5 @@ jobs:
     steps:
       - name: Set Notice Message
         run: echo "::notice::This is a notice message"
+      - name: Set file notice message
+        run: echo "::warning file=README.md,line=2,col=5,endColumn=7,title=ERROR::Readme has problem"
