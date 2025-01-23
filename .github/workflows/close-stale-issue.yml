@@ -2,8 +2,7 @@ name: Close Stale Issues
 
 on:
   schedule:
-    - cron: '15 2 * * *'
-  workflow_dispatch:
+    - cron: '10 2 * * *'
 
 jobs:
   stale:
@@ -12,8 +11,8 @@ jobs:
       - uses: actions/stale@v9.1.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          days-before-issue-stale: 0
-          days-before-issue-close: 0
+          days-before-issue-stale: 1
+          days-before-issue-close: 2
           ignore-issue-updates: true
           close-issue-message: "Dear friend, this issue has been stale for too long and must be closed. Many thanks!"
           close-issue-reason: not_planned
