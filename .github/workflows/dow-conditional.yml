@@ -18,13 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output Monday
-        if: ${{ inputs.day == "Monday" }}
-        run: echo "This is Monday!"
+        if: ${{ inputs.day == 'Monday' }}
+        run: echo 'This is Monday!'
 
       - name: Output Tuesday
-        if: ${{ inputs.day == "Tuesday" }}
-        run: echo "This is Tuesday!"
+        if: ${{ inputs.day == 'Tuesday' }}
+        run: echo 'This is Tuesday!'
 
       - name: Output Monday
-        if: ${{ inputs.day == "Wednesday" }}
-        run: echo "This is Wednesday!"
+        if: ${{ inputs.day == 'Wednesday' }}
+        run: echo 'This is Wednesday!'
