@@ -19,3 +19,10 @@ jobs:
     needs: j2
     steps:
       - run: echo "I can't run!"
+      
+  j4:
+    runs-on: ubuntu-latest
+    if: ${{ always() }}
+    needs: [j1, j2, j3]
+    steps:
+      - run: echo "Can I run?"
