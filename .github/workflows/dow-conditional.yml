@@ -25,6 +25,6 @@ jobs:
         if: ${{ inputs.day == 'Tuesday' }}
         run: echo 'This is Tuesday!'
 
-      - name: Output Monday
+      - name: Output Wednesday
         if: ${{ inputs.day == 'Wednesday' }}
         run: echo 'This is Wednesday!'
