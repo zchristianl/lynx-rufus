@@ -1,0 +1,30 @@
+name: Day of Week Conditional
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+    inputs:
+      day:
+        description: Day of the Week
+        required: true
+        type: choice
+        options:
+          - Monday
+          - Tuesday
+          - Wednesday
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output Monday
+        if: ${{inputs.day === "Monday"}}
+        run: echo "This is Monday!"
+
+      - name: Output Tuesday
+        if: ${{inputs.day === "Tuesday"}}
+        run: echo "This is Tuesday!"
+
+      - name: Output Monday
+        if: ${{inputs.day === "Wednesday"}}
+        run: echo "This is Wednesday!"
