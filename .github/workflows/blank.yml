@@ -1,0 +1,13 @@
+name: Set env with workflow commands
+
+on:
+  workflow_dispatch:
+
+jobs:
+  j1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Variable
+        run: echo "ENV_VAR_1=Potpourri" >> "$GITHUB_ENV"
+      - name: Use Variable
+        run: echo "Your variable is $ENV_VAR_1"
