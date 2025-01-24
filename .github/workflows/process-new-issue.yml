@@ -1,0 +1,23 @@
+name: Process New Issue
+
+# Controls when the workflow will run
+on:
+  issues:
+    types:
+      - opened
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  process_issue:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+        - name: Label issue as Triage
+          env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            ISSUE_URL: ${{ github.event.issue.html_url }}
+          run: |
+            gh issue edit $ISSUE_URL --add-label "triage"
+            gh issue edit $ISSUE_URL --add-assignee "zchristianl"
+            gh issue comment $ISSUE_URL --body "📫 Dear friend, we have received your issue. The team will respond accordingly."
