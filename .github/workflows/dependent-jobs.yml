@@ -26,3 +26,9 @@ jobs:
     needs: [j1, j2, j3]
     steps:
       - run: echo "Can I run?"
+      
+  j99:
+    runs-on: ubuntu-latest
+    if: ${{ always() }}
+    steps:
+      - run: echo "I run always"
