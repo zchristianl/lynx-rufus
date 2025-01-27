@@ -1,4 +1,4 @@
-import {Client} = from 'pg';
+import {Client} from 'pg';
 
 const pgclient = new Client({
     host: process.env.POSTGRES_HOST,
