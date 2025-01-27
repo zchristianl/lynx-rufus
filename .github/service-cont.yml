@@ -1,0 +1,13 @@
+name: Service Container 1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  container-job:
+    runs-on: ubuntu-latest
+    container: node:16-bullseye
+
+    services:
+      redis:
+        image: redis
